@@ -17,8 +17,8 @@
     <CudaCompile Include="Drawing_cuda.cu" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C03A847F-35DF-43A6-AF47-B1359576FFA5}</ProjectGuid>
-    <RootNamespace>ClothSim</RootNamespace>
+    <ProjectGuid>{C749633B-BFA6-41B6-8907-8C67B128E498}</ProjectGuid>
+    <RootNamespace>Task1</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
@@ -47,12 +47,8 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <LibraryPath>C:\Users\Dawid\Desktop\Uni\Paralel\lab-i-final-lab-Kisielekw\CUDA\ClothSim\Common\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\Dawid\Desktop\Uni\Paralel\lab-i-final-lab-Kisielekw\CUDA\ClothSim\Common;$(IncludePath)</IncludePath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LibraryPath>C:\Users\Dawid\Desktop\Uni\Paralel\lab-i-final-lab-Kisielekw\CUDA\ClothSim\Common\lib\x64;$(LibraryPath)</LibraryPath>
-    <IncludePath>C:\Users\Dawid\Desktop\Uni\Paralel\lab-i-final-lab-Kisielekw\CUDA\ClothSim\Common;$(IncludePath)</IncludePath>
+    <IncludePath>C:\Users\Dawid\Desktop\Uni\Paralel\cuda-samples\Common;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Users\Dawid\Desktop\Uni\Paralel\cuda-samples\Common\lib\x64;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
@@ -82,7 +78,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <SubSystem>Console</SubSystem>
-      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;freeglut.lib;glew64.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>cudart_static.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
