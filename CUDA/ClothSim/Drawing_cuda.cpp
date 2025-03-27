@@ -44,6 +44,8 @@
 #include <helper_functions.h>  // CUDA SDK Helper functions
 #include <helper_cuda.h>       // CUDA device initialization helper functions
 
+#include "cloth.h"
+
 typedef unsigned int uint;
 typedef unsigned char uchar;
 
@@ -74,6 +76,7 @@ struct cudaGraphicsResource* cuda_pbo_resource;  // handles OpenGL-CUDA exchange
 GLuint displayTex = 0;
 GLuint bufferTex = 0;
 
+Cloth cloth = Cloth(20, 20, true);
 
 void display();
 void initGLBuffers();
@@ -84,7 +87,7 @@ void cleanup();
 
 extern "C" void initGL(int* argc, char** argv);
 
-extern "C" void render(int width, int height,  dim3 blockSize, dim3 gridSize,  uchar4 * output);
+extern "C" void render(int width, int height,  dim3 blockSize, dim3 gridSize,  uchar4 * output, Cloth * cloth);
 
 
 // display results using OpenGL (called by GLUT)
@@ -98,7 +101,7 @@ void display() {
     checkCudaErrors(cudaGraphicsResourceGetMappedPointer(
         (void**)&d_output, &num_bytes, cuda_pbo_resource));
     render(imageWidth, imageHeight, blockSize, gridSize,
-         d_output);
+         d_output, &cloth);
 
     checkCudaErrors(cudaGraphicsUnmapResources(1, &cuda_pbo_resource, 0));
 

@@ -71,7 +71,6 @@ pub struct Spring{
     rest_length: f32,
     spring_coe: f32,
 }
-
 impl Spring{
     pub fn new(point1: Arc<Mutex<Node>>, point2: Arc<Mutex<Node>>) -> Spring{
         Spring{

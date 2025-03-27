@@ -11,10 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cloth.cu" />
     <ClCompile Include="Drawing_cuda.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="Spring.cpp" />
   </ItemGroup>
   <ItemGroup>
     <CudaCompile Include="Drawing_cuda.cu" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Cloth.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="Spring.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{C03A847F-35DF-43A6-AF47-B1359576FFA5}</ProjectGuid>

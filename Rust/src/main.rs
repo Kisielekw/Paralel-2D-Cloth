@@ -9,7 +9,7 @@ const NUM_THREADS: usize = 8;
 
 fn main() {
     // Create cloth
-    let mut cloth = Cloth::new(20, 35, true, NUM_THREADS);
+    let mut cloth = Cloth::new(1000, 1000, true, NUM_THREADS);
 
     // OpenGL setup
     #[allow(unused_imports)]
@@ -76,6 +76,7 @@ fn main() {
             glutin::event::Event::NewEvents(cause) => match cause {
                 glutin::event::StartCause::ResumeTimeReached { .. } => (),
                 glutin::event::StartCause::Init => (),
+                
                 _ => return,
             },
             _ => return,
@@ -152,7 +153,6 @@ fn main() {
 
         // Display the completed drawing
         target.finish().unwrap();
-
         // End render loop
 
         
